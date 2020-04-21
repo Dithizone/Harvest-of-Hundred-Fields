@@ -4,7 +4,7 @@
 # It takes the stats from the first table after the "Stats"
 # header on a Pokemon's page, which means nuances like
 # Deoxys' formes or mega-evolutions aren't included. Also,
-# if a pokemon's base stats were changed, this took whatever
+# if a pokemon's base stats were changed, this took whichever
 # stats were listed in the first table.
 
 import requests
@@ -63,7 +63,7 @@ for i in pokemonnames.iterrows():
     if len(placewithtypes) == 2:
         type2 = placewithtypes[1].find('b').text
     print(f'Type 1: {type1}, Type 2: {type2}\n')
-    with open('../data/pokemondata.txt', 'a', encoding='utf-8') as file:
+    with open('data/pokemondata.txt', 'a', encoding='utf-8') as file:
         file.write(f'{j},{HP},{Attack},{Defense},{SpAttack},{SpDefense},{Speed},{type1},{type2}\n')
 end = time.process_time()
 elapsed = (end - start) / 60
